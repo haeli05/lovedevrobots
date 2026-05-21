@@ -64,22 +64,32 @@ function scanDependencies(
   const doc = parser.parseFromString(xml, 'text/xml');
   const dir = currentFile.includes('/') ? currentFile.split('/').slice(0, -1).join('/') + '/' : '';
 
-  // Tags that reference external files
-  const fileAttrs: [string, string][] = [
-    ['include',  'file'],
-    ['mesh',     'file'],
-    ['texture',  'file'],
-    ['hfield',   'file'],
-    ['skin',     'file'],
+  // Read compiler dir overrides — meshdir / texturedir are relative to this XML's directory
+  const compiler = doc.querySelector('compiler');
+  const meshdir   = resolveDir(compiler?.getAttribute('meshdir')   ?? '', dir);
+  const texturedir = resolveDir(compiler?.getAttribute('texturedir') ?? '', dir);
+
+  // Tag → [file-attr, which dir override to apply]
+  const fileAttrs: [string, string, string][] = [
+    ['include',  'file',  dir],
+    ['mesh',     'file',  meshdir],
+    ['texture',  'file',  texturedir],
+    ['hfield',   'file',  meshdir],
+    ['skin',     'file',  meshdir],
   ];
 
-  for (const [tag, attr] of fileAttrs) {
+  for (const [tag, attr, prefix] of fileAttrs) {
     for (const el of Array.from(doc.getElementsByTagName(tag))) {
       const val = el.getAttribute(attr);
       if (!val) continue;
-      // Resolve relative path
-      const resolved = val.startsWith('/') ? val.slice(1) : dir + val;
+      const resolved = val.startsWith('/') ? val.slice(1) : prefix + val;
       if (!downloaded.has(resolved)) queue.push(resolved);
     }
   }
+}
+
+function resolveDir(dirAttr: string, xmlDir: string): string {
+  if (!dirAttr) return xmlDir;
+  if (dirAttr.startsWith('/')) return dirAttr.slice(1) + (dirAttr.endsWith('/') ? '' : '/');
+  return xmlDir + dirAttr + (dirAttr.endsWith('/') ? '' : '/');
 }
