@@ -101,7 +101,11 @@ export default function Home() {
 
         {/* Assembly / BOM — right */}
         <aside className="w-[280px] shrink-0 border-l border-neutral-800 bg-neutral-950">
-          <AssemblyPanel assembly={assembly} isFinalized={isFinalized} />
+          <AssemblyPanel
+            assembly={assembly}
+            isFinalized={isFinalized}
+            menagerieRobot={leftTab === 'library' ? menagerieRobot : null}
+          />
         </aside>
 
       </main>

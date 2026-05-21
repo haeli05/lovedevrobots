@@ -1,13 +1,16 @@
 'use client';
 
-import { Download, FileText, Package, Zap, Weight, DollarSign, Activity } from 'lucide-react';
+import { Download, FileText, Package, Zap, Weight, DollarSign, Activity, Bot, ExternalLink } from 'lucide-react';
 import { getCataloguePart } from '@/lib/catalogue';
 import { getAssemblyStats } from '@/lib/assembly';
 import type { Assembly } from '@/lib/types';
+import type { MenagerieRobot } from '@/lib/menagerie';
+import { CATEGORY_LABELS } from '@/lib/menagerie';
 
 interface AssemblyPanelProps {
   assembly: Assembly | null;
   isFinalized: boolean;
+  menagerieRobot?: MenagerieRobot | null;
 }
 
 const CATEGORY_BADGE: Record<string, string> = {
@@ -82,7 +85,9 @@ function ExportButton({
   );
 }
 
-export function AssemblyPanel({ assembly, isFinalized }: AssemblyPanelProps) {
+export function AssemblyPanel({ assembly, isFinalized, menagerieRobot }: AssemblyPanelProps) {
+  if (menagerieRobot) return <MenagerieInfoPanel robot={menagerieRobot} />;
+
   const hasAssembly = assembly && Object.keys(assembly.nodes).length > 0;
   const stats = hasAssembly ? getAssemblyStats(assembly) : null;
 
@@ -203,6 +208,63 @@ export function AssemblyPanel({ assembly, isFinalized }: AssemblyPanelProps) {
           onClick={() => alert('STL export coming in Week 2')}
           disabled={!isFinalized}
         />
+      </div>
+    </div>
+  );
+}
+
+function MenagerieInfoPanel({ robot }: { robot: MenagerieRobot }) {
+  const menagerieUrl = `https://github.com/google-deepmind/mujoco_menagerie/tree/main/${robot.id}`;
+
+  const specs = [
+    { label: 'Maker',    value: robot.maker },
+    { label: 'Category', value: CATEGORY_LABELS[robot.category] },
+    { label: 'DOF',      value: String(robot.dof) },
+  ];
+
+  return (
+    <div className="flex h-full flex-col">
+      {/* Header */}
+      <div className="border-b border-neutral-800 px-4 py-3">
+        <div className="flex items-center gap-2">
+          <Bot className="h-4 w-4 text-orange-400" />
+          <span className="text-sm font-medium text-neutral-200">{robot.name}</span>
+        </div>
+      </div>
+
+      {/* Specs */}
+      <div className="border-b border-neutral-800 p-3 space-y-1.5">
+        {specs.map(({ label, value }) => (
+          <div key={label} className="flex items-center justify-between">
+            <span className="text-[10px] text-neutral-500">{label}</span>
+            <span className="text-[11px] font-medium text-neutral-200">{value}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Description */}
+      <div className="p-3 border-b border-neutral-800">
+        <p className="text-xs leading-relaxed text-neutral-400">{robot.description}</p>
+      </div>
+
+      {/* Source link */}
+      <div className="p-3">
+        <a
+          href={menagerieUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-900 px-3 py-2 text-xs text-neutral-400 hover:border-neutral-700 hover:text-neutral-200 transition-colors"
+        >
+          <ExternalLink className="h-3.5 w-3.5 shrink-0" />
+          <span className="flex-1">View in MuJoCo Menagerie</span>
+        </a>
+      </div>
+
+      {/* Simulation note */}
+      <div className="mx-3 rounded-lg border border-neutral-800 bg-neutral-900/50 px-3 py-2.5">
+        <p className="text-[10px] leading-relaxed text-neutral-500">
+          Live physics via MuJoCo WASM. Assets streamed from Google DeepMind&apos;s open-source menagerie.
+        </p>
       </div>
     </div>
   );
