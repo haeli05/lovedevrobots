@@ -33,6 +33,7 @@ export default function Home() {
         </div>
         <span className="text-xs text-neutral-600">·</span>
         <span className="text-xs text-neutral-500">AI-powered robot builder</span>
+        <span className="ml-auto text-xs font-mono text-neutral-600">v0.9</span>
         {assembly && Object.keys(assembly.nodes).length > 0 && (
           <>
             <span className="text-xs text-neutral-600">·</span>
