@@ -1,0 +1,62 @@
+{
+  "sku": "FRAME_BASE_PLATE_150",
+  "name": "Robot Base Plate 150x150mm",
+  "category": "frame",
+  "description": "3mm aluminum plate with M3 holes on 30mm grid. Larger base for 4-DOF+ arms.",
+  "tags": [
+    "frame",
+    "base",
+    "plate",
+    "mounting",
+    "150mm",
+    "large"
+  ],
+  "supplier": "1688 generic",
+  "price_usd": 10.0,
+  "lead_time_days": 7,
+  "mesh_url": "stl/base_plate_100.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 180,
+    "material": "6061 aluminum",
+    "dims_mm": [
+      150,
+      150,
+      3
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "servo_mount_a",
+      "position": [
+        75,
+        75,
+        3
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "servo_mount_b",
+      "position": [
+        75,
+        45,
+        3
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "sku": "GOBILDA_U_CHANNEL_9",
+  "name": "goBILDA 1120 U-Channel 9-Hole (336mm)",
+  "category": "bracket",
+  "description": "Long aluminum U-channel 336mm. Good for forearm links in larger robot arms.",
+  "tags": [
+    "bracket",
+    "gobilda",
+    "u-channel",
+    "structural",
+    "aluminum",
+    "long"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 16.49,
+  "lead_time_days": 5,
+  "mesh_url": "stl/bracket_u_large.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 98,
+    "material": "6061 aluminum",
+    "dims_mm": [
+      336,
+      24,
+      24
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0,
+        12,
+        12
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        336,
+        12,
+        12
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

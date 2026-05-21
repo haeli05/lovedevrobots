@@ -1,0 +1,48 @@
+{
+  "sku": "SENSOR_TOF_VL53L0X",
+  "name": "VL53L0X Time-of-Flight Sensor",
+  "category": "sensor",
+  "description": "ToF ranging up to 2m, I2C. Detects obstacles or measures gripper distance.",
+  "tags": [
+    "sensor",
+    "tof",
+    "distance",
+    "ranging",
+    "obstacle",
+    "i2c",
+    "proximity"
+  ],
+  "supplier": "STMicroelectronics / Adafruit",
+  "price_usd": 5.0,
+  "lead_time_days": 7,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 2,
+    "interface": "i2c",
+    "range_mm": 2000,
+    "dims_mm": [
+      13,
+      18,
+      5
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_generic",
+      "is_joint": false
+    }
+  ]
+}

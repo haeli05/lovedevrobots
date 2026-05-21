@@ -1,0 +1,78 @@
+{
+  "sku": "GOBILDA_U_CHANNEL_5",
+  "name": "goBILDA 1120 U-Channel 5-Hole (168mm)",
+  "category": "bracket",
+  "description": "Aluminum U-channel 168mm. M4 8mm grid. Standard structural link for FTC and hobby robots.",
+  "tags": [
+    "bracket",
+    "gobilda",
+    "u-channel",
+    "structural",
+    "aluminum",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 11.49,
+  "lead_time_days": 5,
+  "mesh_url": "stl/bracket_u_large.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 55,
+    "material": "6061 aluminum",
+    "dims_mm": [
+      168,
+      24,
+      24
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0,
+        12,
+        12
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        168,
+        12,
+        12
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "servo_mount",
+      "position": [
+        84,
+        24,
+        12
+      ],
+      "orientation": [
+        0.707,
+        0,
+        0,
+        0.707
+      ],
+      "connector": "servo_horn_25T",
+      "is_joint": false
+    }
+  ]
+}

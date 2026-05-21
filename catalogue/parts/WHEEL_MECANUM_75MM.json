@@ -1,0 +1,48 @@
+{
+  "sku": "WHEEL_MECANUM_75MM",
+  "name": "Mecanum Wheel 75mm (Left)",
+  "category": "wheel",
+  "description": "75mm aluminum mecanum wheel, left-hand roller pattern. 6mm D-shaft bore. For holonomic drive.",
+  "tags": [
+    "wheel",
+    "mecanum",
+    "75mm",
+    "holonomic",
+    "omnidirectional",
+    "mobile"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 8.5,
+  "lead_time_days": 12,
+  "mesh_url": "stl/bracket_u_small.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 80,
+    "diameter_mm": 75,
+    "width_mm": 38,
+    "bore_mm": 6,
+    "dims_mm": [
+      75,
+      75,
+      38
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "hub",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "shaft_d_6mm",
+      "is_joint": false
+    }
+  ]
+}

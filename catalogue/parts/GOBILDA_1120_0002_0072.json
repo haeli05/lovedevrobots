@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1120_0002_0072",
+  "name": "1120 Series U-Channel (2 Hole, 72mm Length)",
+  "category": "frame",
+  "description": "1120 Series U-Channel (2 Hole, 72mm Length). Aluminum. goBILDA part 1120-0002-0072.",
+  "tags": [
+    "gobilda",
+    "frame",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 5.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1120_0002_0072.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1120-0002-0072.zip",
+  "specs": {
+    "weight_g": 51.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      72.0,
+      24.0,
+      24.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        72.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

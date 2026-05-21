@@ -1,0 +1,48 @@
+{
+  "sku": "WHEEL_OMNI_60MM",
+  "name": "Omni Wheel 60mm (4-roller)",
+  "category": "wheel",
+  "description": "60mm omni wheel with 4 passive rollers. For 3-wheel omni drive or caster configurations.",
+  "tags": [
+    "wheel",
+    "omni",
+    "60mm",
+    "caster",
+    "omnidirectional",
+    "passive"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 5.5,
+  "lead_time_days": 10,
+  "mesh_url": "stl/bracket_u_small.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 35,
+    "diameter_mm": 60,
+    "width_mm": 20,
+    "bore_mm": 6,
+    "dims_mm": [
+      60,
+      60,
+      20
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "hub",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "shaft_d_6mm",
+      "is_joint": false
+    }
+  ]
+}

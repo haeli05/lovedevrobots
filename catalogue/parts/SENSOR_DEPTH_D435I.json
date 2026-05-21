@@ -1,0 +1,50 @@
+{
+  "sku": "SENSOR_DEPTH_D435I",
+  "name": "Intel RealSense D435i Depth Camera",
+  "category": "sensor",
+  "description": "Stereo depth camera, 30fps 1280x720 depth + integrated IMU. For 3D scene understanding and manipulation.",
+  "tags": [
+    "sensor",
+    "depth",
+    "stereo",
+    "realsense",
+    "intel",
+    "3d",
+    "rgb-d",
+    "manipulation",
+    "ros2"
+  ],
+  "supplier": "Intel",
+  "price_usd": 197.0,
+  "lead_time_days": 14,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 72,
+    "interface": "usb-3",
+    "range_mm": 10000,
+    "dims_mm": [
+      90,
+      25,
+      25
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_generic",
+      "is_joint": false
+    }
+  ]
+}

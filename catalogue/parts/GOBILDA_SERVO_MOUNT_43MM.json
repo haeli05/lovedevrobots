@@ -1,0 +1,62 @@
+{
+  "sku": "GOBILDA_SERVO_MOUNT_43MM",
+  "name": "goBILDA 2000 Servo Bracket 43mm",
+  "category": "bracket",
+  "description": "Aluminum bracket converting 25T servo horn to goBILDA M4 grid. 43mm spacing.",
+  "tags": [
+    "bracket",
+    "gobilda",
+    "servo-mount",
+    "adapter",
+    "25t",
+    "aluminum"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 8.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/bracket_u_small.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 22,
+    "material": "6061 aluminum",
+    "dims_mm": [
+      43,
+      24,
+      43
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "servo_horn",
+      "position": [
+        0,
+        12,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "servo_horn_25T",
+      "is_joint": false
+    },
+    {
+      "id": "output",
+      "position": [
+        43,
+        12,
+        43
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

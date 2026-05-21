@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1612_1221_0057",
+  "name": "12mm ID Linear Ball Bearing (21mm OD, 57mm Length) - 2 Pack",
+  "category": "bracket",
+  "description": "12mm ID Linear Ball Bearing (21mm OD, 57mm Length) - 2 Pack. . goBILDA part 1612-1221-0057.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 8.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1612_1221_0057.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1612-1221-0057.zip",
+  "specs": {
+    "weight_g": 50.0,
+    "material": "",
+    "dims_mm": [
+      57.0,
+      21.0,
+      12.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        57.0,
+        21.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

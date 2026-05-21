@@ -1,0 +1,47 @@
+{
+  "sku": "TEENSY_41",
+  "name": "Teensy 4.1",
+  "category": "controller",
+  "description": "Cortex-M7 600MHz, 7x UART, 3x SPI. Best microcontroller for low-latency servo loops and IMU fusion.",
+  "tags": [
+    "controller",
+    "teensy",
+    "real-time",
+    "microcontroller",
+    "fast",
+    "uart",
+    "servo-driver"
+  ],
+  "supplier": "PJRC",
+  "price_usd": 29.85,
+  "lead_time_days": 7,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 9,
+    "power_w": 0.6,
+    "dims_mm": [
+      61,
+      18,
+      4
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "controller_mount_teensy",
+      "is_joint": false
+    }
+  ]
+}

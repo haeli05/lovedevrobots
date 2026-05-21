@@ -1,0 +1,47 @@
+{
+  "sku": "SENSOR_CAMERA_OV2640",
+  "name": "OV2640 2MP Camera Module",
+  "category": "sensor",
+  "description": "2MP CMOS camera with flexible cable. For object detection and manipulation feedback on ESP32-CAM.",
+  "tags": [
+    "sensor",
+    "camera",
+    "vision",
+    "2mp",
+    "object-detection"
+  ],
+  "supplier": "Generic",
+  "price_usd": 8.0,
+  "lead_time_days": 7,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 5,
+    "interface": "dvp",
+    "resolution": "1600x1200",
+    "fov_deg": 66,
+    "dims_mm": [
+      24,
+      24,
+      6
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_generic",
+      "is_joint": false
+    }
+  ]
+}

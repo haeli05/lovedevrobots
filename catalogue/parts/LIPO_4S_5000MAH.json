@@ -1,0 +1,50 @@
+{
+  "sku": "LIPO_4S_5000MAH",
+  "name": "LiPo 4S 5000mAh (14.8V)",
+  "category": "battery",
+  "description": "14.8V 4S LiPo for heavy mobile robots and large arms. XT90. Long runtime.",
+  "tags": [
+    "battery",
+    "lipo",
+    "14.8v",
+    "4s",
+    "xt90",
+    "high-capacity",
+    "mobile",
+    "heavy"
+  ],
+  "supplier": "Turnigy / HobbyKing",
+  "price_usd": 45.0,
+  "lead_time_days": 10,
+  "mesh_url": "stl/lipo_2s_1200.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 380,
+    "voltage_v": 14.8,
+    "capacity_mah": 5000,
+    "connector": "XT90",
+    "dims_mm": [
+      155,
+      55,
+      43
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "body_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_30x30",
+      "is_joint": false
+    }
+  ]
+}

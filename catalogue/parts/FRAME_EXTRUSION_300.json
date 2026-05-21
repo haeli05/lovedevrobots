@@ -1,0 +1,62 @@
+{
+  "sku": "FRAME_EXTRUSION_300",
+  "name": "2020 Aluminum Extrusion 300mm",
+  "category": "frame",
+  "description": "V-slot 20x20mm aluminum extrusion, 300mm. Common forearm length for desktop robot arms.",
+  "tags": [
+    "frame",
+    "extrusion",
+    "2020",
+    "aluminum",
+    "structural",
+    "300mm"
+  ],
+  "supplier": "1688 generic",
+  "price_usd": 5.0,
+  "lead_time_days": 5,
+  "mesh_url": "stl/extrusion_2020_200.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 97,
+    "material": "6063 aluminum",
+    "dims_mm": [
+      20,
+      20,
+      300
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "end_a",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "extrusion_2020_end",
+      "is_joint": false
+    },
+    {
+      "id": "end_b",
+      "position": [
+        0,
+        0,
+        300
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "connector": "extrusion_2020_end",
+      "is_joint": false
+    }
+  ]
+}

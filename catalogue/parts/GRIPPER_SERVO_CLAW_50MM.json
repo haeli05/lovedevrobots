@@ -1,0 +1,64 @@
+{
+  "sku": "GRIPPER_SERVO_CLAW_50MM",
+  "name": "Servo Claw Gripper 50mm",
+  "category": "gripper",
+  "description": "Single-servo claw gripper, 50mm open span. Lightweight plastic. For pick-and-place of small objects.",
+  "tags": [
+    "gripper",
+    "claw",
+    "single-servo",
+    "end-effector",
+    "plastic",
+    "lightweight",
+    "pick-place"
+  ],
+  "supplier": "1688 generic",
+  "price_usd": 9.0,
+  "lead_time_days": 10,
+  "mesh_url": "stl/gripper_parallel_mini.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 25,
+    "max_payload_g": 150,
+    "stroke_mm": 50,
+    "dims_mm": [
+      55,
+      25,
+      55
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "servo_input",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "servo_horn_25T",
+      "is_joint": false
+    },
+    {
+      "id": "wrist_mount",
+      "position": [
+        0,
+        0,
+        55
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    }
+  ]
+}

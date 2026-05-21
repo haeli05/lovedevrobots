@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_4101_1014_0300",
+  "name": "4101 Series Aluminum Tube for Lead Screw Square Nut (10mm ID x 14mm OD, 300mm Length)",
+  "category": "bracket",
+  "description": "4101 Series Aluminum Tube for Lead Screw Square Nut (10mm ID x 14mm OD, 300mm Length). Aluminum. goBILDA part 4101-1014-0300.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 5.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_4101_1014_0300.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/4101-1014-0300.zip",
+  "specs": {
+    "weight_g": 59.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      300.0,
+      14.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        300.0,
+        14.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

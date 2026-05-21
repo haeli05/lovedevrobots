@@ -1,0 +1,74 @@
+{
+  "sku": "SERVO_MG996R",
+  "name": "MG996R Metal Gear Servo",
+  "category": "servo",
+  "description": "Budget 10 kg.cm metal-gear hobby servo. PWM. Great for pan-tilt or simple joint actuators.",
+  "tags": [
+    "servo",
+    "hobby",
+    "budget",
+    "pwm",
+    "metal-gear",
+    "pan-tilt"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 3.5,
+  "lead_time_days": 12,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 55,
+    "torque_nm": 0.98,
+    "voltage_v": 6.0,
+    "protocol": "pwm",
+    "max_rpm": 60,
+    "dims_mm": [
+      40,
+      20,
+      38
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "horn",
+      "position": [
+        0,
+        0,
+        38
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "servo_horn_25T",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -90,
+        90
+      ]
+    }
+  ]
+}

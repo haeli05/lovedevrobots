@@ -1,0 +1,76 @@
+{
+  "sku": "SERVO_DS3218",
+  "name": "DS3218 20kg Digital Servo",
+  "category": "servo",
+  "description": "20 kg.cm metal-gear digital servo. PWM/PPM. Good mid-range option for arms under $200 BOM.",
+  "tags": [
+    "servo",
+    "hobby",
+    "budget",
+    "digital",
+    "pwm",
+    "metal-gear",
+    "20kg",
+    "arm"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 7.5,
+  "lead_time_days": 12,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 60,
+    "torque_nm": 1.96,
+    "voltage_v": 7.4,
+    "protocol": "pwm",
+    "max_rpm": 50,
+    "dims_mm": [
+      40,
+      20,
+      40
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "horn",
+      "position": [
+        0,
+        0,
+        40
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "servo_horn_25T",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -120,
+        120
+      ]
+    }
+  ]
+}

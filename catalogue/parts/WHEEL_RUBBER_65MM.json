@@ -1,0 +1,49 @@
+{
+  "sku": "WHEEL_RUBBER_65MM",
+  "name": "Rubber Wheel 65mm",
+  "category": "wheel",
+  "description": "Rubber-tyred wheel 65mm diameter, 26mm wide. 6mm D-shaft bore. For differential drive robots.",
+  "tags": [
+    "wheel",
+    "rubber",
+    "65mm",
+    "differential",
+    "drive",
+    "mobile",
+    "traction"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 3.5,
+  "lead_time_days": 10,
+  "mesh_url": "stl/bracket_u_small.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 40,
+    "diameter_mm": 65,
+    "width_mm": 26,
+    "bore_mm": 6,
+    "dims_mm": [
+      65,
+      65,
+      26
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "hub",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "shaft_d_6mm",
+      "is_joint": false
+    }
+  ]
+}

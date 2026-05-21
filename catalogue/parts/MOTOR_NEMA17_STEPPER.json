@@ -1,0 +1,77 @@
+{
+  "sku": "MOTOR_NEMA17_STEPPER",
+  "name": "NEMA 17 Stepper Motor (40mm)",
+  "category": "motor",
+  "description": "1.7A bipolar stepper, 40mm body, 5mm D-shaft. 1.8 deg/step. For precise linear axes.",
+  "tags": [
+    "motor",
+    "stepper",
+    "nema17",
+    "1.8deg",
+    "linear",
+    "precise",
+    "cnc",
+    "arm"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 8.0,
+  "lead_time_days": 10,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 280,
+    "voltage_v": 12.0,
+    "torque_nm": 0.46,
+    "current_a": 1.7,
+    "step_deg": 1.8,
+    "shaft_mm": 5,
+    "dims_mm": [
+      42,
+      42,
+      40
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_30x30",
+      "is_joint": false
+    },
+    {
+      "id": "shaft",
+      "position": [
+        21,
+        21,
+        45
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "shaft_d_5mm",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -36000,
+        36000
+      ]
+    }
+  ]
+}

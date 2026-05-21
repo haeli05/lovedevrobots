@@ -1,0 +1,75 @@
+{
+  "sku": "DYNAMIXEL_XC330",
+  "name": "Dynamixel XC330-T288",
+  "category": "servo",
+  "description": "0.76 N.m compact smart servo, 5-24V. TTL. Lighter XL330 with higher voltage range.",
+  "tags": [
+    "servo",
+    "dynamixel",
+    "compact",
+    "smart",
+    "ttl",
+    "lightweight",
+    "arm"
+  ],
+  "supplier": "Robotis",
+  "price_usd": 49.9,
+  "lead_time_days": 5,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 22,
+    "torque_nm": 0.76,
+    "voltage_v": 12.0,
+    "protocol": "serial_ttl",
+    "max_rpm": 120,
+    "dims_mm": [
+      20,
+      34,
+      26
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "horn",
+      "position": [
+        0,
+        0,
+        26
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "dynamixel_x_idler",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -180,
+        180
+      ]
+    }
+  ]
+}

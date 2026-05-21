@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1612_0815_0024",
+  "name": "8mm ID Linear Ball Bearing (15mm OD, 24mm Length) - 2 Pack",
+  "category": "bracket",
+  "description": "8mm ID Linear Ball Bearing (15mm OD, 24mm Length) - 2 Pack. . goBILDA part 1612-0815-0024.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 4.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1612_0815_0024.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1612-0815-0024.zip",
+  "specs": {
+    "weight_g": 13.0,
+    "material": "",
+    "dims_mm": [
+      24.0,
+      15.0,
+      8.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        24.0,
+        15.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

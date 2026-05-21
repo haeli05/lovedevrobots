@@ -1,0 +1,47 @@
+{
+  "sku": "DYNAMIXEL_U2D2",
+  "name": "Dynamixel U2D2 USB-to-TTL Adapter",
+  "category": "controller",
+  "description": "USB-to-TTL/RS485 adapter for Dynamixel servos. Required to control Dynamixel chains from PC or SBC.",
+  "tags": [
+    "controller",
+    "dynamixel",
+    "usb",
+    "ttl",
+    "rs485",
+    "adapter",
+    "interface"
+  ],
+  "supplier": "Robotis",
+  "price_usd": 29.9,
+  "lead_time_days": 5,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 8,
+    "power_w": 0.1,
+    "dims_mm": [
+      47,
+      18,
+      9
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_generic",
+      "is_joint": false
+    }
+  ]
+}

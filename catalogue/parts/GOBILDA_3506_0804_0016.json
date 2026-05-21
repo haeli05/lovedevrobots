@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_3506_0804_0016",
+  "name": "3506 Series Lead Screw Square Nut (8mm Lead, 4 Start, 16mm Length)",
+  "category": "frame",
+  "description": "3506 Series Lead Screw Square Nut (8mm Lead, 4 Start, 16mm Length). Bronze. goBILDA part 3506-0804-0016.",
+  "tags": [
+    "gobilda",
+    "frame",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 7.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_3506_0804_0016.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/3506-0804-0016.zip",
+  "specs": {
+    "weight_g": 10.0,
+    "material": "Bronze",
+    "dims_mm": [
+      16.0,
+      24.0,
+      24.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        16.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

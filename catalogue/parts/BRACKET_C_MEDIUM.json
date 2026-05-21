@@ -1,0 +1,61 @@
+{
+  "sku": "BRACKET_C_MEDIUM",
+  "name": "C-Bracket 50mm (aluminum)",
+  "category": "bracket",
+  "description": "C-shaped bracket for attaching servo body to structural link. Two M3 faces at 90\u00b0.",
+  "tags": [
+    "bracket",
+    "c-bracket",
+    "aluminum",
+    "servo",
+    "arm"
+  ],
+  "supplier": "1688 generic",
+  "price_usd": 3.8,
+  "lead_time_days": 7,
+  "mesh_url": "stl/bracket_l_medium.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 16,
+    "material": "6061 aluminum",
+    "dims_mm": [
+      50,
+      25,
+      50
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "servo_body",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "structure",
+      "position": [
+        50,
+        0,
+        50
+      ],
+      "orientation": [
+        0,
+        0,
+        0.707,
+        0.707
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    }
+  ]
+}

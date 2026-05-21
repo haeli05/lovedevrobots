@@ -1,0 +1,74 @@
+{
+  "sku": "GOBILDA_SERVO_2000",
+  "name": "goBILDA 2000 Series Dual Mode Servo",
+  "category": "servo",
+  "description": "13.5 kg.cm servo with goBILDA M4-grid output. Designed for goBILDA structural systems.",
+  "tags": [
+    "servo",
+    "gobilda",
+    "dual-mode",
+    "pwm",
+    "structural",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 34.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 62,
+    "torque_nm": 1.32,
+    "voltage_v": 6.0,
+    "protocol": "pwm",
+    "max_rpm": 55,
+    "dims_mm": [
+      46,
+      24,
+      38
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "horn",
+      "position": [
+        0,
+        0,
+        38
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "servo_horn_25T",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -300,
+        300
+      ]
+    }
+  ]
+}

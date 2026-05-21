@@ -1,0 +1,48 @@
+{
+  "sku": "RASPBERRY_PI_5",
+  "name": "Raspberry Pi 5 (4GB)",
+  "category": "controller",
+  "description": "Cortex-A76, 4GB RAM, PCIe. 3x faster than Pi 4. Best for real-time vision and inference.",
+  "tags": [
+    "controller",
+    "raspberry-pi",
+    "linux",
+    "ros2",
+    "vision",
+    "inference",
+    "powerful",
+    "pcie"
+  ],
+  "supplier": "Raspberry Pi Foundation",
+  "price_usd": 60.0,
+  "lead_time_days": 7,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 51,
+    "power_w": 12.0,
+    "dims_mm": [
+      85,
+      56,
+      20
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "controller_mount_pi",
+      "is_joint": false
+    }
+  ]
+}

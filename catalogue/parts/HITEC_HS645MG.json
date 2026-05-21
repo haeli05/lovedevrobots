@@ -1,0 +1,74 @@
+{
+  "sku": "HITEC_HS645MG",
+  "name": "Hitec HS-645MG Metal Gear Servo",
+  "category": "servo",
+  "description": "9.6 kg.cm analog servo, metal gears. PWM. Industry-standard hobby servo.",
+  "tags": [
+    "servo",
+    "hitec",
+    "hobby",
+    "analog",
+    "pwm",
+    "metal-gear"
+  ],
+  "supplier": "Hitec",
+  "price_usd": 22.0,
+  "lead_time_days": 7,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 55,
+    "torque_nm": 0.94,
+    "voltage_v": 6.0,
+    "protocol": "pwm",
+    "max_rpm": 62,
+    "dims_mm": [
+      41,
+      20,
+      37
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "horn",
+      "position": [
+        0,
+        0,
+        37
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "servo_horn_25T",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -90,
+        90
+      ]
+    }
+  ]
+}

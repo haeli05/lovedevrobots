@@ -1,0 +1,64 @@
+{
+  "sku": "SENSOR_FORCE_50N",
+  "name": "Force/Torque Sensor 50N",
+  "category": "sensor",
+  "description": "Load cell 50N max, I2C readout. Mounts between wrist and gripper for grasp force feedback.",
+  "tags": [
+    "sensor",
+    "force",
+    "torque",
+    "load-cell",
+    "grasp",
+    "feedback",
+    "wrist"
+  ],
+  "supplier": "1688 generic",
+  "price_usd": 22.0,
+  "lead_time_days": 12,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 15,
+    "interface": "i2c",
+    "max_force_n": 50,
+    "dims_mm": [
+      30,
+      30,
+      8
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "robot_side",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "gripper_side",
+      "position": [
+        0,
+        0,
+        8
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    }
+  ]
+}

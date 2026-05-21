@@ -1,0 +1,76 @@
+{
+  "sku": "MOTOR_DC_37GA520",
+  "name": "DC Gearmotor 37GA-520 (100 RPM)",
+  "category": "motor",
+  "description": "12V DC gearmotor, 6mm D-shaft, 100 RPM, 37mm barrel. Higher torque for heavier mobile platforms.",
+  "tags": [
+    "motor",
+    "dc",
+    "gearmotor",
+    "12v",
+    "wheeled",
+    "mobile",
+    "heavy",
+    "high-torque"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 9.0,
+  "lead_time_days": 12,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 180,
+    "voltage_v": 12.0,
+    "max_rpm": 100,
+    "torque_nm": 1.2,
+    "shaft_mm": 6,
+    "dims_mm": [
+      37,
+      37,
+      100
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "body_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_generic",
+      "is_joint": false
+    },
+    {
+      "id": "shaft",
+      "position": [
+        0,
+        0,
+        100
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "shaft_d_6mm",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -36000,
+        36000
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "sku": "SENSOR_IMU_BNO055",
+  "name": "BNO055 9-DoF IMU Module",
+  "category": "sensor",
+  "description": "9-DOF IMU with on-chip sensor fusion. I2C/UART. Outputs calibrated quaternion/Euler angles.",
+  "tags": [
+    "sensor",
+    "imu",
+    "orientation",
+    "gyro",
+    "accelerometer",
+    "i2c",
+    "fusion"
+  ],
+  "supplier": "Adafruit / Generic",
+  "price_usd": 12.0,
+  "lead_time_days": 7,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 3,
+    "interface": "i2c",
+    "sample_rate_hz": 100,
+    "dims_mm": [
+      20,
+      27,
+      4
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_generic",
+      "is_joint": false
+    }
+  ]
+}

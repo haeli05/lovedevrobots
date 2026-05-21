@@ -1,0 +1,39 @@
+{
+  "sku": "FEETECH_STS3215",
+  "name": "Feetech STS3215 Serial Bus Servo",
+  "category": "servo",
+  "description": "30 kg.cm serial bus servo, popular for low-cost robot arms. Daisy-chainable via TTL serial.",
+  "tags": ["servo", "low-cost", "serial", "daisy-chain", "arm", "lerobot"],
+  "supplier": "Feetech / 1688",
+  "price_usd": 14.50,
+  "lead_time_days": 10,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 60,
+    "torque_nm": 2.94,
+    "voltage_v": 7.4,
+    "protocol": "serial_ttl",
+    "max_rpm": 50,
+    "resolution_deg": 0.088,
+    "dims_mm": [40, 20, 40]
+  },
+  "mount_points": [
+    {
+      "id": "base",
+      "position": [0, 0, 0],
+      "orientation": [0, 0, 0, 1],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "horn",
+      "position": [0, 0, 40],
+      "orientation": [0, 0, 0, 1],
+      "connector": "servo_horn_25T",
+      "is_joint": true,
+      "joint_axis": [0, 0, 1],
+      "joint_limits_deg": [-180, 180]
+    }
+  ]
+}

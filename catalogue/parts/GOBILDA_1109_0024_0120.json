@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1109_0024_0120",
+  "name": "1109 Series goRAIL® (120mm Length)",
+  "category": "frame",
+  "description": "1109 Series goRAIL® (120mm Length). Aluminum. goBILDA part 1109-0024-0120.",
+  "tags": [
+    "gobilda",
+    "frame",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 5.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1109_0024_0120.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1109-0024-0120.zip",
+  "specs": {
+    "weight_g": 64.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      120.0,
+      24.0,
+      24.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        120.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

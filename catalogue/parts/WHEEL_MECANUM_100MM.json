@@ -1,0 +1,49 @@
+{
+  "sku": "WHEEL_MECANUM_100MM",
+  "name": "Mecanum Wheel 100mm (Left)",
+  "category": "wheel",
+  "description": "100mm mecanum wheel, left-hand pattern. 6mm D-shaft. For larger holonomic platforms.",
+  "tags": [
+    "wheel",
+    "mecanum",
+    "100mm",
+    "holonomic",
+    "omnidirectional",
+    "mobile",
+    "large"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 15.0,
+  "lead_time_days": 12,
+  "mesh_url": "stl/bracket_u_small.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 180,
+    "diameter_mm": 100,
+    "width_mm": 50,
+    "bore_mm": 6,
+    "dims_mm": [
+      100,
+      100,
+      50
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "hub",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "shaft_d_6mm",
+      "is_joint": false
+    }
+  ]
+}

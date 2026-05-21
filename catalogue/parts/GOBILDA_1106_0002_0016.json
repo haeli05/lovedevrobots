@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1106_0002_0016",
+  "name": "1106 Series Square Beam (2 Hole, 16mm Length)",
+  "category": "frame",
+  "description": "1106 Series Square Beam (2 Hole, 16mm Length). Aluminum. goBILDA part 1106-0002-0016.",
+  "tags": [
+    "gobilda",
+    "frame",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 2.59,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1106_0002_0016.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1106-0002-0016.zip",
+  "specs": {
+    "weight_g": 1.7,
+    "material": "Aluminum",
+    "dims_mm": [
+      16.0,
+      24.0,
+      24.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        16.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

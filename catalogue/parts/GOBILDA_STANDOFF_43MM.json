@@ -1,0 +1,62 @@
+{
+  "sku": "GOBILDA_STANDOFF_43MM",
+  "name": "goBILDA M4 Hex Standoff 43mm",
+  "category": "frame",
+  "description": "Hex aluminum standoff 43mm, M4 threads. For spacing PCBs and layered structures.",
+  "tags": [
+    "frame",
+    "gobilda",
+    "standoff",
+    "spacer",
+    "m4",
+    "43mm"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 2.49,
+  "lead_time_days": 5,
+  "mesh_url": "stl/extrusion_2020_200.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 8,
+    "material": "6061 aluminum",
+    "dims_mm": [
+      7,
+      7,
+      43
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "end_a",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "end_b",
+      "position": [
+        0,
+        0,
+        43
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

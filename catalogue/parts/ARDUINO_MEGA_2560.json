@@ -1,0 +1,47 @@
+{
+  "sku": "ARDUINO_MEGA_2560",
+  "name": "Arduino Mega 2560 R3",
+  "category": "controller",
+  "description": "ATmega2560, 16MHz, 54 digital I/O, 4x UART. For low-level PWM servo control and sensor fusion.",
+  "tags": [
+    "controller",
+    "arduino",
+    "pwm",
+    "servo-driver",
+    "low-level",
+    "uart",
+    "budget"
+  ],
+  "supplier": "Arduino / clone",
+  "price_usd": 16.0,
+  "lead_time_days": 7,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 37,
+    "power_w": 0.5,
+    "dims_mm": [
+      101,
+      53,
+      15
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "controller_mount_arduino",
+      "is_joint": false
+    }
+  ]
+}

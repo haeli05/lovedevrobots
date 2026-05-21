@@ -1,0 +1,94 @@
+{
+  "sku": "GOBILDA_QUAD_BLOCK",
+  "name": "goBILDA 1300 Quad Block",
+  "category": "bracket",
+  "description": "24mm cubic block with M4 grid on all 4 sides. Hub for connecting four beams at 90\u00b0.",
+  "tags": [
+    "bracket",
+    "gobilda",
+    "hub",
+    "quad",
+    "block",
+    "junction"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 5.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/bracket_u_small.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 12,
+    "material": "6061 aluminum",
+    "dims_mm": [
+      24,
+      24,
+      24
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0,
+        12,
+        12
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        24,
+        12,
+        12
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_c",
+      "position": [
+        12,
+        0,
+        12
+      ],
+      "orientation": [
+        0.707,
+        0,
+        0,
+        0.707
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_d",
+      "position": [
+        12,
+        24,
+        12
+      ],
+      "orientation": [
+        -0.707,
+        0,
+        0,
+        0.707
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "sku": "LIPO_3S_2200MAH",
+  "name": "LiPo 3S 2200mAh (11.1V)",
+  "category": "battery",
+  "description": "11.1V 3S LiPo. Powers 6-8 high-torque servos. XT60 connector. 30-45 min runtime.",
+  "tags": [
+    "battery",
+    "lipo",
+    "11.1v",
+    "3s",
+    "xt60",
+    "high-power",
+    "arm",
+    "mobile"
+  ],
+  "supplier": "Turnigy / HobbyKing",
+  "price_usd": 22.0,
+  "lead_time_days": 10,
+  "mesh_url": "stl/lipo_2s_1200.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 175,
+    "voltage_v": 11.1,
+    "capacity_mah": 2200,
+    "connector": "XT60",
+    "dims_mm": [
+      115,
+      35,
+      25
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "body_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_30x30",
+      "is_joint": false
+    }
+  ]
+}

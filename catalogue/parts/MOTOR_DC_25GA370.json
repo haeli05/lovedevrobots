@@ -1,0 +1,75 @@
+{
+  "sku": "MOTOR_DC_25GA370",
+  "name": "DC Gearmotor 25GA-370 (200 RPM)",
+  "category": "motor",
+  "description": "12V DC gearmotor, 6mm D-shaft, 200 RPM. Compact 25mm barrel for small wheeled robot drive.",
+  "tags": [
+    "motor",
+    "dc",
+    "gearmotor",
+    "12v",
+    "wheeled",
+    "mobile",
+    "drive"
+  ],
+  "supplier": "Generic / Aliexpress",
+  "price_usd": 6.5,
+  "lead_time_days": 12,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 70,
+    "voltage_v": 12.0,
+    "max_rpm": 200,
+    "torque_nm": 0.49,
+    "shaft_mm": 6,
+    "dims_mm": [
+      25,
+      25,
+      75
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "body_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_generic",
+      "is_joint": false
+    },
+    {
+      "id": "shaft",
+      "position": [
+        0,
+        0,
+        75
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "shaft_d_6mm",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -36000,
+        36000
+      ]
+    }
+  ]
+}

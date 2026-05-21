@@ -1,0 +1,49 @@
+{
+  "sku": "JETSON_NANO_4GB",
+  "name": "NVIDIA Jetson Nano 4GB",
+  "category": "controller",
+  "description": "128-core Maxwell GPU, Quad Cortex-A57, 4GB. Runs inference on-robot. Best for vision+manipulation.",
+  "tags": [
+    "controller",
+    "jetson",
+    "nvidia",
+    "gpu",
+    "inference",
+    "vision",
+    "ros2",
+    "linux",
+    "powerful"
+  ],
+  "supplier": "NVIDIA",
+  "price_usd": 149.0,
+  "lead_time_days": 14,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 140,
+    "power_w": 10.0,
+    "dims_mm": [
+      100,
+      79,
+      28
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "controller_mount_pi",
+      "is_joint": false
+    }
+  ]
+}

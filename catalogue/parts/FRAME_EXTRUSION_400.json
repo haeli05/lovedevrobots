@@ -1,0 +1,63 @@
+{
+  "sku": "FRAME_EXTRUSION_400",
+  "name": "2020 Aluminum Extrusion 400mm",
+  "category": "frame",
+  "description": "V-slot 20x20mm aluminum extrusion, 400mm. For mobile robot chassis rails and tall frames.",
+  "tags": [
+    "frame",
+    "extrusion",
+    "2020",
+    "aluminum",
+    "structural",
+    "400mm",
+    "chassis"
+  ],
+  "supplier": "1688 generic",
+  "price_usd": 6.0,
+  "lead_time_days": 5,
+  "mesh_url": "stl/extrusion_2020_200.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 130,
+    "material": "6063 aluminum",
+    "dims_mm": [
+      20,
+      20,
+      400
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "end_a",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "extrusion_2020_end",
+      "is_joint": false
+    },
+    {
+      "id": "end_b",
+      "position": [
+        0,
+        0,
+        400
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "connector": "extrusion_2020_end",
+      "is_joint": false
+    }
+  ]
+}

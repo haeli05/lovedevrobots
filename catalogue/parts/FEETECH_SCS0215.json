@@ -1,0 +1,74 @@
+{
+  "sku": "FEETECH_SCS0215",
+  "name": "Feetech SCS0215 Serial Bus Servo",
+  "category": "servo",
+  "description": "15 kg.cm mid-range SCS servo at 6V. 25T horn, 20x20 bolt pattern.",
+  "tags": [
+    "servo",
+    "feetech",
+    "scs",
+    "ttl",
+    "mid-range",
+    "arm"
+  ],
+  "supplier": "Feetech / 1688",
+  "price_usd": 10.0,
+  "lead_time_days": 10,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 55,
+    "torque_nm": 1.47,
+    "voltage_v": 6.0,
+    "protocol": "serial_ttl",
+    "max_rpm": 60,
+    "dims_mm": [
+      40,
+      20,
+      40
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    },
+    {
+      "id": "horn",
+      "position": [
+        0,
+        0,
+        40
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "servo_horn_25T",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -180,
+        180
+      ]
+    }
+  ]
+}

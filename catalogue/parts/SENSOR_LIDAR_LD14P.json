@@ -1,0 +1,49 @@
+{
+  "sku": "SENSOR_LIDAR_LD14P",
+  "name": "LD14P 360 LiDAR (12m)",
+  "category": "sensor",
+  "description": "360 single-plane LiDAR, 12m range, 4500 pts/rev. UART. For SLAM-based navigation on mobile robots.",
+  "tags": [
+    "sensor",
+    "lidar",
+    "360",
+    "slam",
+    "navigation",
+    "mobile",
+    "mapping"
+  ],
+  "supplier": "LDROBOT",
+  "price_usd": 35.0,
+  "lead_time_days": 10,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 98,
+    "interface": "uart",
+    "range_m": 12,
+    "scan_rate_hz": 10,
+    "dims_mm": [
+      97,
+      97,
+      38
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_generic",
+      "is_joint": false
+    }
+  ]
+}

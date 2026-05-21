@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1143_0011_0288",
+  "name": "1143 Series Mini Low-Side U-Channel (11 Hole, 288mm Length)",
+  "category": "frame",
+  "description": "1143 Series Mini Low-Side U-Channel (11 Hole, 288mm Length). Aluminum. goBILDA part 1143-0011-0288.",
+  "tags": [
+    "gobilda",
+    "frame",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 12.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1143_0011_0288.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1143-0011-0288.zip",
+  "specs": {
+    "weight_g": 78.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      288.0,
+      24.0,
+      24.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        288.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

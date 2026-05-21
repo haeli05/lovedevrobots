@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1118_0024_0192",
+  "name": "1118 Series Open goRAIL® (192mm Length)",
+  "category": "frame",
+  "description": "1118 Series Open goRAIL® (192mm Length). Aluminum. goBILDA part 1118-0024-0192.",
+  "tags": [
+    "gobilda",
+    "frame",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 7.79,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1118_0024_0192.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1118-0024-0192.zip",
+  "specs": {
+    "weight_g": 96.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      192.0,
+      24.0,
+      24.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        192.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

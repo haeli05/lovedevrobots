@@ -1,0 +1,52 @@
+# Connector type registry.
+#
+# Adding a new connector requires:
+#   1. Entry here with name + description + geometry constraints
+#   2. At least 2 parts that use it (otherwise it's useless)
+#   3. Compatibility test in tests/test_connectors.py
+#
+# Naming convention: <family>_<size>_<feature>
+#   servo_horn_25T          — 25-tooth servo spline output
+#   m3_4hole_20x20          — 4× M3 holes on 20×20mm pattern
+#   extrusion_2020_end      — end of 20×20mm aluminum extrusion
+#   dynamixel_x_idler       — Dynamixel X-series idler horn
+
+connectors:
+  servo_horn_25T:
+    description: "25-tooth spline output, common on Feetech STS/SCS series and small Dynamixels"
+    spline_teeth: 25
+    bolt_pattern: "8x M2 on 19mm circle"
+
+  servo_horn_20T:
+    description: "20-tooth spline output, smaller servos"
+    spline_teeth: 20
+
+  dynamixel_x_idler:
+    description: "Dynamixel X-series idler horn (passive side)"
+
+  m3_4hole_20x20:
+    description: "4× M3 through-holes on 20×20mm square pattern"
+    hole_size_mm: 3.2
+    pattern_mm: [20, 20]
+
+  m3_4hole_30x30:
+    description: "4× M3 through-holes on 30×30mm square pattern"
+    hole_size_mm: 3.2
+    pattern_mm: [30, 30]
+
+  extrusion_2020_end:
+    description: "End face of 20×20mm v-slot aluminum extrusion"
+    profile: "2020 v-slot"
+
+  extrusion_2040_end:
+    description: "End face of 20×40mm v-slot aluminum extrusion"
+    profile: "2040 v-slot"
+
+  controller_mount_pi:
+    description: "Raspberry Pi standard mounting hole pattern (58×49mm, M2.5)"
+
+  controller_mount_esp32_devkit:
+    description: "Generic ESP32 DevKit board edge clip"
+
+  gripper_servo_output:
+    description: "Generic gripper attachment to a servo horn (paired with servo_horn_25T usually via adapter)"

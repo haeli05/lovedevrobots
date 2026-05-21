@@ -1,0 +1,49 @@
+{
+  "sku": "LIPO_2S_3300MAH",
+  "name": "LiPo 2S 3300mAh (7.4V)",
+  "category": "battery",
+  "description": "7.4V 2S LiPo 3300mAh. XT60. Good balance of weight and runtime for desktop arms.",
+  "tags": [
+    "battery",
+    "lipo",
+    "7.4v",
+    "2s",
+    "xt60",
+    "medium",
+    "desktop"
+  ],
+  "supplier": "Turnigy / HobbyKing",
+  "price_usd": 28.0,
+  "lead_time_days": 10,
+  "mesh_url": "stl/lipo_2s_1200.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 205,
+    "voltage_v": 7.4,
+    "capacity_mah": 3300,
+    "connector": "XT60",
+    "dims_mm": [
+      108,
+      35,
+      23
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "body_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_30x30",
+      "is_joint": false
+    }
+  ]
+}

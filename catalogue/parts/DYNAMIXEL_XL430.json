@@ -1,0 +1,75 @@
+{
+  "sku": "DYNAMIXEL_XL430",
+  "name": "Dynamixel XL430-W250",
+  "category": "servo",
+  "description": "1.4 N.m smart servo, 12V, TTL/RS485. Position/velocity/torque control. Popular for medium arms.",
+  "tags": [
+    "servo",
+    "dynamixel",
+    "smart",
+    "ttl",
+    "medium",
+    "arm",
+    "ros2"
+  ],
+  "supplier": "Robotis",
+  "price_usd": 49.9,
+  "lead_time_days": 5,
+  "mesh_url": "stl/feetech_sts3215.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 57,
+    "torque_nm": 1.4,
+    "voltage_v": 12.0,
+    "protocol": "serial_ttl",
+    "max_rpm": 61,
+    "dims_mm": [
+      28,
+      47,
+      34
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "m3_4hole_30x30",
+      "is_joint": false
+    },
+    {
+      "id": "horn",
+      "position": [
+        0,
+        0,
+        34
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "dynamixel_x_idler",
+      "is_joint": true,
+      "joint_axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_limits_deg": [
+        -180,
+        180
+      ]
+    }
+  ]
+}

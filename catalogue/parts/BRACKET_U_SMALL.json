@@ -1,0 +1,33 @@
+{
+  "sku": "BRACKET_U_SMALL",
+  "name": "Small U-Bracket (aluminum)",
+  "category": "bracket",
+  "description": "Small U-shaped bracket for joining two STS3215-class servos in series. 20x20 mounting pattern.",
+  "tags": ["bracket", "u-bracket", "aluminum", "arm"],
+  "supplier": "1688 generic",
+  "price_usd": 3.20,
+  "lead_time_days": 7,
+  "mesh_url": "stl/bracket_u_small.stl",
+  "cad_url": "step/bracket_u_small.step",
+  "specs": {
+    "weight_g": 18,
+    "material": "6061 aluminum",
+    "dims_mm": [40, 40, 25]
+  },
+  "mount_points": [
+    {
+      "id": "input",
+      "position": [0, 0, 0],
+      "orientation": [0, 0, 0, 1],
+      "connector": "servo_horn_25T",
+      "is_joint": false
+    },
+    {
+      "id": "output",
+      "position": [0, 0, 40],
+      "orientation": [0, 0, 0, 1],
+      "connector": "m3_4hole_20x20",
+      "is_joint": false
+    }
+  ]
+}

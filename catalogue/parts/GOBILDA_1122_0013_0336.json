@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1122_0013_0336",
+  "name": "1122 Series Rail-Channel (13 Hole, 336mm Length)",
+  "category": "frame",
+  "description": "1122 Series Rail-Channel (13 Hole, 336mm Length). Aluminum. goBILDA part 1122-0013-0336.",
+  "tags": [
+    "gobilda",
+    "frame",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 14.59,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1122_0013_0336.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1122-0013-0336.zip",
+  "specs": {
+    "weight_g": 210.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      336.0,
+      24.0,
+      24.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "face_a",
+      "position": [
+        0.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "face_b",
+      "position": [
+        336.0,
+        12.0,
+        12.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

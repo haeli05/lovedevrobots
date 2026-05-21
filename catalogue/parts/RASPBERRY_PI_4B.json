@@ -1,0 +1,48 @@
+{
+  "sku": "RASPBERRY_PI_4B",
+  "name": "Raspberry Pi 4 Model B (4GB)",
+  "category": "controller",
+  "description": "Quad-core Cortex-A72, 4GB RAM. Full Linux/ROS2 host. Runs vision models, motion planning. USB 3.0 + Gigabit ETH.",
+  "tags": [
+    "controller",
+    "raspberry-pi",
+    "linux",
+    "ros2",
+    "vision",
+    "wifi",
+    "usb3",
+    "powerful"
+  ],
+  "supplier": "Raspberry Pi Foundation",
+  "price_usd": 55.0,
+  "lead_time_days": 7,
+  "mesh_url": "stl/esp32_s3_dev.stl",
+  "cad_url": null,
+  "specs": {
+    "weight_g": 46,
+    "power_w": 7.5,
+    "dims_mm": [
+      85,
+      56,
+      17
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "board_mount",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "orientation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "connector": "controller_mount_pi",
+      "is_joint": false
+    }
+  ]
+}
