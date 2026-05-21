@@ -216,10 +216,14 @@ export function AssemblyPanel({ assembly, isFinalized, menagerieRobot }: Assembl
 function MenagerieInfoPanel({ robot }: { robot: MenagerieRobot }) {
   const menagerieUrl = `https://github.com/google-deepmind/mujoco_menagerie/tree/main/${robot.id}`;
 
-  const specs = [
+  const specs: { label: string; value: string }[] = [
     { label: 'Maker',    value: robot.maker },
     { label: 'Category', value: CATEGORY_LABELS[robot.category] },
     { label: 'DOF',      value: String(robot.dof) },
+    ...(robot.est_cost_usd != null ? [{ label: 'Est. Cost', value: robot.est_cost_usd >= 1000 ? `$${(robot.est_cost_usd/1000).toFixed(0)}k` : `$${robot.est_cost_usd}` }] : []),
+    ...(robot.est_weight_kg != null ? [{ label: 'Weight', value: `${robot.est_weight_kg} kg` }] : []),
+    ...(robot.payload_kg != null ? [{ label: 'Payload', value: `${robot.payload_kg} kg` }] : []),
+    ...(robot.reach_mm != null ? [{ label: 'Reach', value: `${robot.reach_mm} mm` }] : []),
   ];
 
   return (
@@ -232,14 +236,16 @@ function MenagerieInfoPanel({ robot }: { robot: MenagerieRobot }) {
         </div>
       </div>
 
-      {/* Specs */}
-      <div className="border-b border-neutral-800 p-3 space-y-1.5">
-        {specs.map(({ label, value }) => (
-          <div key={label} className="flex items-center justify-between">
-            <span className="text-[10px] text-neutral-500">{label}</span>
-            <span className="text-[11px] font-medium text-neutral-200">{value}</span>
-          </div>
-        ))}
+      {/* Specs grid */}
+      <div className="border-b border-neutral-800 p-3">
+        <div className="grid grid-cols-2 gap-2">
+          {specs.map(({ label, value }) => (
+            <div key={label} className="flex flex-col rounded-lg bg-neutral-900 px-2.5 py-2">
+              <span className="text-[10px] text-neutral-500">{label}</span>
+              <span className="text-sm font-semibold text-neutral-100">{value}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Description */}
@@ -260,10 +266,9 @@ function MenagerieInfoPanel({ robot }: { robot: MenagerieRobot }) {
         </a>
       </div>
 
-      {/* Simulation note */}
       <div className="mx-3 rounded-lg border border-neutral-800 bg-neutral-900/50 px-3 py-2.5">
         <p className="text-[10px] leading-relaxed text-neutral-500">
-          Live physics via MuJoCo WASM. Assets streamed from Google DeepMind&apos;s open-source menagerie.
+          Live physics via MuJoCo WASM. Assets from Google DeepMind&apos;s open-source menagerie.
         </p>
       </div>
     </div>

@@ -15,7 +15,7 @@ type LeftTab = 'chat' | 'library';
 export default function Home() {
   const [assembly, setAssembly] = useState<Assembly | null>(null);
   const [isFinalized, setIsFinalized] = useState(false);
-  const [leftTab, setLeftTab] = useState<LeftTab>('chat');
+  const [leftTab, setLeftTab] = useState<LeftTab>('library');
   const [menagerieRobot, setMenagerieRobot] = useState<MenagerieRobot | null>(null);
 
   const handleAssemblyUpdate = useCallback((a: Assembly) => {

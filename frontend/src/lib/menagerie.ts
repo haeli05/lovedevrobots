@@ -6,6 +6,10 @@ export interface MenagerieRobot {
   dof: number;
   description: string;
   sceneFile?: string;  // defaults to 'scene.xml'
+  est_cost_usd?: number;
+  est_weight_kg?: number;
+  payload_kg?: number;
+  reach_mm?: number;
 }
 
 export const MENAGERIE_BASE =
@@ -20,6 +24,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 6,
     description: 'Low-cost 6-DOF arm. Feetech STS3215 servos. LeRobot compatible.',
+    est_cost_usd: 110, est_weight_kg: 0.8, payload_kg: 0.5, reach_mm: 300,
   },
   {
     id: 'low_cost_robot_arm',
@@ -28,6 +33,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 6,
     description: 'Open-source budget arm. ~$250 BOM. Used in LeRobot research.',
+    est_cost_usd: 250, est_weight_kg: 1.0, payload_kg: 0.5, reach_mm: 350,
   },
   {
     id: 'robotstudio_so101',
@@ -36,6 +42,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 6,
     description: 'Updated SO-ARM100 with improved wrist and gripper.',
+    est_cost_usd: 120, est_weight_kg: 0.85, payload_kg: 0.5, reach_mm: 310,
   },
   {
     id: 'franka_emika_panda',
@@ -44,6 +51,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 7,
     description: 'Industry-standard research arm. 7-DOF. ~$10k.',
+    est_cost_usd: 10000, est_weight_kg: 18, payload_kg: 3, reach_mm: 855,
   },
   {
     id: 'franka_fr3',
@@ -52,6 +60,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 7,
     description: 'Next-gen Panda. Faster, stiffer, research & production.',
+    est_cost_usd: 12000, est_weight_kg: 18, payload_kg: 4, reach_mm: 855,
   },
   {
     id: 'kuka_iiwa_14',
@@ -60,6 +69,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 7,
     description: 'Collaborative 7-DOF arm. 14 kg payload. Torque sensing.',
+    est_cost_usd: 80000, est_weight_kg: 30, payload_kg: 14, reach_mm: 820,
   },
   {
     id: 'universal_robots_ur5e',
@@ -68,6 +78,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 6,
     description: '5 kg payload collaborative arm. Widely deployed in industry.',
+    est_cost_usd: 35000, est_weight_kg: 20.6, payload_kg: 5, reach_mm: 850,
   },
   {
     id: 'trossen_vx300s',
@@ -76,6 +87,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 6,
     description: 'Dynamixel-based 6-DOF research arm. ROS ready.',
+    est_cost_usd: 5000, est_weight_kg: 4.5, payload_kg: 0.75, reach_mm: 750,
   },
   {
     id: 'flexiv_rizon4',
@@ -84,6 +96,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 7,
     description: 'Adaptive robot with force/torque sensing. 4 kg payload.',
+    est_cost_usd: 45000, est_weight_kg: 22, payload_kg: 4, reach_mm: 800,
   },
   {
     id: 'kinova_gen3',
@@ -92,6 +105,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 7,
     description: 'Lightweight 7-DOF arm. 4 kg payload. Vision-ready.',
+    est_cost_usd: 25000, est_weight_kg: 8.2, payload_kg: 4, reach_mm: 902,
   },
   {
     id: 'rethink_robotics_sawyer',
@@ -100,6 +114,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'arm',
     dof: 7,
     description: '7-DOF collaborative arm with embedded vision.',
+    est_cost_usd: 29000, est_weight_kg: 19, payload_kg: 4, reach_mm: 1260,
   },
   // ── Bimanual ─────────────────────────────────────────────────────────────────
   {
@@ -109,6 +124,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'bimanual',
     dof: 14,
     description: 'Bimanual teleoperation system. 2× ViperX 300. ACT paper.',
+    est_cost_usd: 20000, est_weight_kg: 12,
   },
   // ── Humanoids ────────────────────────────────────────────────────────────────
   {
@@ -118,6 +134,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'humanoid',
     dof: 19,
     description: 'Full-size humanoid. 47 kg. 1.8 m/s walking.',
+    est_cost_usd: 90000, est_weight_kg: 47,
   },
   {
     id: 'unitree_g1',
@@ -126,6 +143,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'humanoid',
     dof: 23,
     description: 'Compact humanoid with dexterous hands. ~$16k.',
+    est_cost_usd: 16000, est_weight_kg: 35,
   },
   {
     id: 'booster_t1',
@@ -134,6 +152,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'humanoid',
     dof: 21,
     description: 'Research humanoid platform.',
+    est_cost_usd: 50000, est_weight_kg: 50,
   },
   // ── Quadrupeds ───────────────────────────────────────────────────────────────
   {
@@ -143,6 +162,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'quadruped',
     dof: 12,
     description: 'Agile quadruped. 15 kg. ~$1600.',
+    est_cost_usd: 1600, est_weight_kg: 15, payload_kg: 3,
   },
   {
     id: 'boston_dynamics_spot',
@@ -151,6 +171,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'quadruped',
     dof: 12,
     description: 'Industry-leading quadruped. Payload arm available.',
+    est_cost_usd: 75000, est_weight_kg: 32.5, payload_kg: 14,
   },
   {
     id: 'unitree_a1',
@@ -159,6 +180,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'quadruped',
     dof: 12,
     description: 'Compact research quadruped. Popular in RL research.',
+    est_cost_usd: 10000, est_weight_kg: 12, payload_kg: 5,
   },
   {
     id: 'google_barkour_vb',
@@ -167,6 +189,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'quadruped',
     dof: 12,
     description: 'Google\'s agility-focused quadruped research platform.',
+    est_cost_usd: 15000, est_weight_kg: 8,
   },
   // ── Hands / Grippers ─────────────────────────────────────────────────────────
   {
@@ -176,6 +199,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'hand',
     dof: 1,
     description: 'Industry standard 2-finger adaptive gripper. 85mm stroke.',
+    est_cost_usd: 4200, est_weight_kg: 0.9,
   },
   {
     id: 'wonik_allegro',
@@ -184,6 +208,7 @@ export const ROBOTS: MenagerieRobot[] = [
     category: 'hand',
     dof: 16,
     description: '4-finger dexterous hand. 16 DOF. Research platform.',
+    est_cost_usd: 15000, est_weight_kg: 0.45,
   },
 ];
 

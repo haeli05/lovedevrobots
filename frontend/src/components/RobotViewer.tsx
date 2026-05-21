@@ -2,7 +2,7 @@
 
 import { Canvas, useLoader, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, Grid, Html, ContactShadows } from '@react-three/drei';
-import { Suspense, useMemo, useRef, useState } from 'react';
+import { Suspense, useMemo, useRef, useState, useCallback } from 'react';
 import * as THREE from 'three';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 
@@ -10,7 +10,7 @@ import type { Assembly } from '@/lib/types';
 import { computeTreeLayout, getAssemblyStats, type TreeNode } from '@/lib/assembly';
 import { getCataloguePart } from '@/lib/catalogue';
 import { PhysicsScene } from './PhysicsScene';
-import { MenagerieScene } from './MenagerieScene';
+import { MenagerieScene, type ActuatorInfo } from './MenagerieScene';
 import type { MenagerieRobot } from '@/lib/menagerie';
 
 interface RobotViewerProps {
@@ -514,6 +514,26 @@ export function RobotViewer({ assembly, menagerieRobot }: RobotViewerProps) {
   const [physicsStatus, setPhysicsStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [menagerieStatus, setMenagerieStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [menagerieMsg, setMenagerieMsg] = useState('');
+  const [paused, setPaused] = useState(false);
+  const [actuators, setActuators] = useState<ActuatorInfo[]>([]);
+  const [ctrlValues, setCtrlValues] = useState<number[]>([]);
+  const ctrlRef = useRef<Float64Array | null>(null);
+  const resetFnRef = useRef<(() => void) | null>(null);
+
+  const handleReady = useCallback((info: ActuatorInfo[]) => {
+    setActuators(info);
+    setCtrlValues(info.map(({ lo, hi }) => (lo + hi) / 2));
+  }, []);
+
+  const handleReset = useCallback(() => {
+    resetFnRef.current?.();
+    if (actuators.length) setCtrlValues(actuators.map(({ lo, hi }) => (lo + hi) / 2));
+  }, [actuators]);
+
+  const setCtrl = useCallback((i: number, v: number) => {
+    setCtrlValues((prev) => { const next = [...prev]; next[i] = v; return next; });
+    if (ctrlRef.current) ctrlRef.current[i] = v;
+  }, []);
 
   const nodeMap = useMemo(() => (assembly ? computeTreeLayout(assembly) : {}), [assembly]);
   const rootIds = useMemo(
@@ -547,7 +567,7 @@ export function RobotViewer({ assembly, menagerieRobot }: RobotViewerProps) {
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
 
-      {/* Menagerie mode — Robot Library tab active */}
+      {/* Menagerie mode */}
       {menagerieRobot ? (
         <>
           <Canvas camera={{ position: [1.5, 1.2, 1.5], fov: 45 }} shadows>
@@ -559,19 +579,68 @@ export function RobotViewer({ assembly, menagerieRobot }: RobotViewerProps) {
               <Environment preset="warehouse" />
               <Grid args={[6, 6]} cellSize={0.1} cellThickness={0.3} sectionSize={0.5} sectionThickness={0.7} fadeDistance={8} cellColor="#1a1a1a" sectionColor="#2a2a2a" />
               <ContactShadows position={[0, -0.001, 0]} opacity={0.45} blur={3} far={6} resolution={512} />
-              <MenagerieScene robot={menagerieRobot} onStatusChange={(s, msg) => { setMenagerieStatus(s); if (msg) setMenagerieMsg(msg); }} />
+              <MenagerieScene
+                robot={menagerieRobot}
+                paused={paused}
+                ctrlRef={ctrlRef}
+                onStatusChange={(s, msg) => { setMenagerieStatus(s); if (msg) setMenagerieMsg(msg); }}
+                onReady={handleReady}
+                onReset={(fn) => { resetFnRef.current = fn; }}
+              />
               <OrbitControls makeDefault enableDamping dampingFactor={0.06} />
             </Suspense>
           </Canvas>
 
-          {/* Robot name badge */}
+          {/* Top-left: robot name */}
           <div style={{ position: 'absolute', top: 10, left: 10, background: 'rgba(9,9,11,0.82)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 7, padding: '5px 10px', pointerEvents: 'none' }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: '#f5f5f5', fontFamily: 'ui-monospace, monospace' }}>{menagerieRobot.name}</div>
             <div style={{ fontSize: 9, color: '#71717a', marginTop: 1 }}>{menagerieRobot.maker} · {menagerieRobot.dof} DOF</div>
           </div>
 
+          {/* Top-right: pause + reset */}
+          {menagerieStatus === 'ready' && (
+            <div style={{ position: 'absolute', top: 10, right: 10, display: 'flex', gap: 5 }}>
+              <button onClick={() => setPaused((p) => !p)} style={btnStyle(paused)}>
+                {paused ? '▶ Play' : '⏸ Pause'}
+              </button>
+              <button onClick={handleReset} style={btnStyle(false)}>↺ Reset</button>
+            </div>
+          )}
+
+          {/* Bottom: joint sliders */}
+          {menagerieStatus === 'ready' && actuators.length > 0 && (
+            <div style={{
+              position: 'absolute', bottom: 12, left: 12, right: 12,
+              background: 'rgba(9,9,11,0.88)', border: '1px solid rgba(255,255,255,0.07)',
+              borderRadius: 8, padding: '8px 10px',
+              maxHeight: 160, overflowY: 'auto',
+            }}>
+              <div style={{ fontSize: 9, color: '#52525b', fontFamily: 'ui-monospace, monospace', letterSpacing: '0.07em', textTransform: 'uppercase', marginBottom: 6 }}>
+                Joint Control
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '4px 12px' }}>
+                {actuators.map((act, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ fontSize: 9, color: '#71717a', fontFamily: 'ui-monospace, monospace', minWidth: 70, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={act.name}>
+                      {act.name}
+                    </span>
+                    <input
+                      type="range"
+                      min={act.lo}
+                      max={act.hi}
+                      step={(act.hi - act.lo) / 200}
+                      value={ctrlValues[i] ?? (act.lo + act.hi) / 2}
+                      onChange={(e) => setCtrl(i, parseFloat(e.target.value))}
+                      style={{ flex: 1, accentColor: '#f97316', height: 3, cursor: 'pointer' }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {menagerieStatus === 'loading' && (
-            <div style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 9, color: '#f97316', fontFamily: 'ui-monospace, monospace', letterSpacing: '0.05em' }}>
+            <div style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 9, color: '#f97316', fontFamily: 'ui-monospace, monospace' }}>
               {menagerieMsg || 'Loading…'}
             </div>
           )}
@@ -693,3 +762,13 @@ export function RobotViewer({ assembly, menagerieRobot }: RobotViewerProps) {
   );
 }
 
+
+function btnStyle(active: boolean): React.CSSProperties {
+  return {
+    background: active ? 'rgba(249,115,22,0.85)' : 'rgba(9,9,11,0.78)',
+    border: active ? '1px solid rgba(249,115,22,0.4)' : '1px solid rgba(255,255,255,0.08)',
+    borderRadius: 6, padding: '4px 10px', fontSize: 9, fontWeight: 700,
+    color: active ? '#fff' : '#a1a1aa', fontFamily: 'ui-monospace, monospace',
+    letterSpacing: '0.07em', cursor: 'pointer', transition: 'all 0.12s',
+  };
+}
