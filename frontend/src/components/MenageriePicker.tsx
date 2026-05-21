@@ -5,13 +5,14 @@ import { ROBOTS, CATEGORY_LABELS, type MenagerieRobot } from '@/lib/menagerie';
 
 interface Props {
   onSelect: (robot: MenagerieRobot) => void;
+  selectedId?: string | null;
 }
 
 const CATEGORY_ORDER: MenagerieRobot['category'][] = [
   'arm', 'bimanual', 'humanoid', 'quadruped', 'hand',
 ];
 
-export function MenageriePicker({ onSelect }: Props) {
+export function MenageriePicker({ onSelect, selectedId }: Props) {
   const [activeCategory, setActiveCategory] = useState<MenagerieRobot['category']>('arm');
 
   const filtered = ROBOTS.filter((r) => r.category === activeCategory);
@@ -42,10 +43,14 @@ export function MenageriePicker({ onSelect }: Props) {
             <button
               key={robot.id}
               onClick={() => onSelect(robot)}
-              className="group flex flex-col gap-1 rounded-lg border border-neutral-800 bg-neutral-900 p-3 text-left transition-colors hover:border-orange-500/50 hover:bg-neutral-800"
+              className={`group flex flex-col gap-1 rounded-lg border p-3 text-left transition-colors ${
+                selectedId === robot.id
+                  ? 'border-orange-500/60 bg-orange-500/10'
+                  : 'border-neutral-800 bg-neutral-900 hover:border-orange-500/40 hover:bg-neutral-800'
+              }`}
             >
               <div className="flex items-baseline justify-between gap-2">
-                <span className="text-sm font-semibold text-neutral-100 group-hover:text-orange-400">
+                <span className={`text-sm font-semibold ${selectedId === robot.id ? 'text-orange-400' : 'text-neutral-100 group-hover:text-orange-400'}`}>
                   {robot.name}
                 </span>
                 <span className="shrink-0 text-xs text-neutral-600">{robot.dof} DOF</span>

@@ -6,11 +6,17 @@ import { Bot } from 'lucide-react';
 import { ChatPanel } from '@/components/ChatPanel';
 import { AssemblyPanel } from '@/components/AssemblyPanel';
 import { RobotViewer } from '@/components/RobotViewer';
+import { MenageriePicker } from '@/components/MenageriePicker';
 import type { Assembly } from '@/lib/types';
+import type { MenagerieRobot } from '@/lib/menagerie';
+
+type LeftTab = 'chat' | 'library';
 
 export default function Home() {
   const [assembly, setAssembly] = useState<Assembly | null>(null);
   const [isFinalized, setIsFinalized] = useState(false);
+  const [leftTab, setLeftTab] = useState<LeftTab>('chat');
+  const [menagerieRobot, setMenagerieRobot] = useState<MenagerieRobot | null>(null);
 
   const handleAssemblyUpdate = useCallback((a: Assembly) => {
     setAssembly(a);
@@ -19,6 +25,10 @@ export default function Home() {
 
   const handleFinalized = useCallback((_name: string) => {
     setIsFinalized(true);
+  }, []);
+
+  const handleRobotSelect = useCallback((r: MenagerieRobot) => {
+    setMenagerieRobot(r);
   }, []);
 
   return (
@@ -44,24 +54,56 @@ export default function Home() {
 
       {/* 3-column layout */}
       <main className="flex flex-1 overflow-hidden">
-        {/* Chat — left */}
-        <aside className="w-[380px] shrink-0 border-r border-neutral-800 bg-neutral-950">
-          <ChatPanel
-            assembly={assembly}
-            onAssemblyUpdate={handleAssemblyUpdate}
-            onFinalized={handleFinalized}
-          />
+
+        {/* Left column — Chat + Library tabs */}
+        <aside className="flex w-[380px] shrink-0 flex-col border-r border-neutral-800 bg-neutral-950">
+          {/* Tab bar */}
+          <div className="flex shrink-0 border-b border-neutral-800">
+            {(['chat', 'library'] as LeftTab[]).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setLeftTab(tab)}
+                className={`px-4 py-2.5 text-xs font-semibold uppercase tracking-widest transition-colors font-mono border-b-2 ${
+                  leftTab === tab
+                    ? 'border-orange-500 text-orange-400'
+                    : 'border-transparent text-neutral-600 hover:text-neutral-400'
+                }`}
+              >
+                {tab === 'chat' ? 'Chat' : 'Robot Library'}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab content */}
+          <div className="min-h-0 flex-1 overflow-hidden">
+            {leftTab === 'chat' ? (
+              <ChatPanel
+                assembly={assembly}
+                onAssemblyUpdate={handleAssemblyUpdate}
+                onFinalized={handleFinalized}
+              />
+            ) : (
+              <MenageriePicker
+                onSelect={handleRobotSelect}
+                selectedId={menagerieRobot?.id ?? null}
+              />
+            )}
+          </div>
         </aside>
 
         {/* 3D Viewer — center */}
         <div className="flex-1 bg-neutral-900">
-          <RobotViewer assembly={assembly} />
+          <RobotViewer
+            assembly={assembly}
+            menagerieRobot={leftTab === 'library' ? menagerieRobot : null}
+          />
         </div>
 
         {/* Assembly / BOM — right */}
         <aside className="w-[280px] shrink-0 border-l border-neutral-800 bg-neutral-950">
           <AssemblyPanel assembly={assembly} isFinalized={isFinalized} />
         </aside>
+
       </main>
     </div>
   );

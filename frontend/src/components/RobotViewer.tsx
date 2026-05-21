@@ -10,12 +10,12 @@ import type { Assembly } from '@/lib/types';
 import { computeTreeLayout, getAssemblyStats, type TreeNode } from '@/lib/assembly';
 import { getCataloguePart } from '@/lib/catalogue';
 import { PhysicsScene } from './PhysicsScene';
-import { MenageriePicker } from './MenageriePicker';
 import { MenagerieScene } from './MenagerieScene';
 import type { MenagerieRobot } from '@/lib/menagerie';
 
 interface RobotViewerProps {
   assembly: Assembly | null;
+  menagerieRobot?: MenagerieRobot | null;
 }
 
 // ── Mesh components ────────────────────────────────────────────────────────────
@@ -507,13 +507,11 @@ function EmptyScene() {
 
 // ── Main viewer ────────────────────────────────────────────────────────────────
 
-export function RobotViewer({ assembly }: RobotViewerProps) {
+export function RobotViewer({ assembly, menagerieRobot }: RobotViewerProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [physicsMode, setPhysicsMode] = useState(false);
   const [physicsStatus, setPhysicsStatus] = useState<'loading' | 'ready' | 'error'>('loading');
-  const [viewMode, setViewMode] = useState<'build' | 'library'>('build');
-  const [menagerieRobot, setMenagerieRobot] = useState<MenagerieRobot | null>(null);
   const [menagerieStatus, setMenagerieStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [menagerieMsg, setMenagerieMsg] = useState('');
 
@@ -547,94 +545,45 @@ export function RobotViewer({ assembly }: RobotViewerProps) {
     : [];
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
 
-      {/* Mode tabs */}
-      <div style={{ display: 'flex', borderBottom: '1px solid #1f1f1f', background: '#09090b', flexShrink: 0 }}>
-        {(['build', 'library'] as const).map((mode) => (
-          <button
-            key={mode}
-            onClick={() => setViewMode(mode)}
-            style={{
-              padding: '6px 14px',
-              fontSize: 10,
-              fontWeight: 600,
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              fontFamily: 'ui-monospace, monospace',
-              cursor: 'pointer',
-              border: 'none',
-              borderBottom: viewMode === mode ? '2px solid #f97316' : '2px solid transparent',
-              background: 'transparent',
-              color: viewMode === mode ? '#f97316' : '#52525b',
-              transition: 'color 0.15s',
-            }}
-          >
-            {mode === 'build' ? 'Build' : 'Robot Library'}
-          </button>
-        ))}
-      </div>
+      {/* Menagerie mode — Robot Library tab active */}
+      {menagerieRobot ? (
+        <>
+          <Canvas camera={{ position: [1.5, 1.2, 1.5], fov: 45 }} shadows>
+            <Suspense fallback={null}>
+              <hemisphereLight args={['#b4d4ff', '#402010', 0.4]} />
+              <ambientLight intensity={0.4} />
+              <directionalLight position={[2, 3.5, 2]} intensity={1.6} castShadow shadow-mapSize={[2048, 2048]} />
+              <directionalLight position={[-1.5, 1, -1]} intensity={0.3} color="#8090c0" />
+              <Environment preset="warehouse" />
+              <Grid args={[6, 6]} cellSize={0.1} cellThickness={0.3} sectionSize={0.5} sectionThickness={0.7} fadeDistance={8} cellColor="#1a1a1a" sectionColor="#2a2a2a" />
+              <ContactShadows position={[0, -0.001, 0]} opacity={0.45} blur={3} far={6} resolution={512} />
+              <MenagerieScene robot={menagerieRobot} onStatusChange={(s, msg) => { setMenagerieStatus(s); if (msg) setMenagerieMsg(msg); }} />
+              <OrbitControls makeDefault enableDamping dampingFactor={0.06} />
+            </Suspense>
+          </Canvas>
 
-      {/* Library mode — picker + sim */}
-      {viewMode === 'library' && (
-        <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
-          {/* Picker sidebar */}
-          <div style={{ width: 200, flexShrink: 0, borderRight: '1px solid #1f1f1f', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-            <MenageriePicker onSelect={(r) => {
-              setMenagerieRobot(r);
-              setMenagerieStatus('loading');
-              setMenagerieMsg('');
-            }} />
+          {/* Robot name badge */}
+          <div style={{ position: 'absolute', top: 10, left: 10, background: 'rgba(9,9,11,0.82)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 7, padding: '5px 10px', pointerEvents: 'none' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#f5f5f5', fontFamily: 'ui-monospace, monospace' }}>{menagerieRobot.name}</div>
+            <div style={{ fontSize: 9, color: '#71717a', marginTop: 1 }}>{menagerieRobot.maker} · {menagerieRobot.dof} DOF</div>
           </div>
 
-          {/* Viewer */}
-          <div style={{ flex: 1, position: 'relative' }}>
-            {!menagerieRobot ? (
-              <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#3f3f46', fontSize: 12, fontFamily: 'ui-sans-serif, system-ui' }}>
-                Select a robot from the list
-              </div>
-            ) : (
-              <>
-                <Canvas camera={{ position: [1.5, 1.2, 1.5], fov: 45 }} shadows>
-                  <Suspense fallback={null}>
-                    <hemisphereLight args={['#b4d4ff', '#402010', 0.4]} />
-                    <ambientLight intensity={0.4} />
-                    <directionalLight position={[2, 3.5, 2]} intensity={1.6} castShadow shadow-mapSize={[2048, 2048]} />
-                    <directionalLight position={[-1.5, 1, -1]} intensity={0.3} color="#8090c0" />
-                    <Environment preset="warehouse" />
-                    <Grid args={[6, 6]} cellSize={0.1} cellThickness={0.3} sectionSize={0.5} sectionThickness={0.7} fadeDistance={8} cellColor="#1a1a1a" sectionColor="#2a2a2a" />
-                    <ContactShadows position={[0, -0.001, 0]} opacity={0.45} blur={3} far={6} resolution={512} />
-                    <MenagerieScene robot={menagerieRobot} onStatusChange={(s, msg) => { setMenagerieStatus(s); if (msg) setMenagerieMsg(msg); }} />
-                    <OrbitControls makeDefault enableDamping dampingFactor={0.06} />
-                  </Suspense>
-                </Canvas>
-
-                {/* Robot name badge */}
-                <div style={{ position: 'absolute', top: 10, left: 10, background: 'rgba(9,9,11,0.82)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 7, padding: '5px 10px', pointerEvents: 'none' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: '#f5f5f5', fontFamily: 'ui-monospace, monospace' }}>{menagerieRobot.name}</div>
-                  <div style={{ fontSize: 9, color: '#71717a', marginTop: 1 }}>{menagerieRobot.maker} · {menagerieRobot.dof} DOF</div>
-                </div>
-
-                {/* Loading / error status */}
-                {menagerieStatus === 'loading' && (
-                  <div style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 9, color: '#f97316', fontFamily: 'ui-monospace, monospace', letterSpacing: '0.05em' }}>
-                    {menagerieMsg || 'Loading…'}
-                  </div>
-                )}
-                {menagerieStatus === 'error' && (
-                  <div style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 9, color: '#ef4444', fontFamily: 'ui-monospace, monospace' }}>
-                    {menagerieMsg || 'Load failed'}
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Build mode — existing assembly viewer */}
-      {viewMode === 'build' && (
-      <div style={{ position: 'relative', flex: 1 }}>
+          {menagerieStatus === 'loading' && (
+            <div style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 9, color: '#f97316', fontFamily: 'ui-monospace, monospace', letterSpacing: '0.05em' }}>
+              {menagerieMsg || 'Loading…'}
+            </div>
+          )}
+          {menagerieStatus === 'error' && (
+            <div style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 9, color: '#ef4444', fontFamily: 'ui-monospace, monospace' }}>
+              {menagerieMsg || 'Load failed'}
+            </div>
+          )}
+        </>
+      ) : (
+      /* Build mode — assembly viewer */
+      <div style={{ position: 'relative', width: '100%', height: '100%' }}>
       <Canvas
         camera={{ position: [camDist, camDist * 0.9, camDist], fov: 45, up: [0, 1, 0] }}
         shadows
@@ -743,3 +692,4 @@ export function RobotViewer({ assembly }: RobotViewerProps) {
     </div>
   );
 }
+
