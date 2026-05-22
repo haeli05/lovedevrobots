@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_3415_0014_0048",
+  "name": "3415 Series 5mm HTD Pitch Hub Mount Timing Belt Pulley (14mm Bore, 48 Tooth)",
+  "category": "bracket",
+  "description": "3415 Series 5mm HTD Pitch Hub Mount Timing Belt Pulley (14mm Bore, 48 Tooth). Plastic. goBILDA part 3415-0014-0048.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 12.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_3415_0014_0048.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/3415-0014-0048.zip",
+  "specs": {
+    "weight_g": 42.0,
+    "material": "Plastic",
+    "dims_mm": [
+      48.0,
+      24.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        48.0,
+        24.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

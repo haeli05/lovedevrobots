@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1500_0010_0032",
+  "name": "1500 Series Plastic Spacer (32mm ID x 34mm OD, 1mm Thickness) - 12 Pack",
+  "category": "bracket",
+  "description": "1500 Series Plastic Spacer (32mm ID x 34mm OD, 1mm Thickness) - 12 Pack. Plastic. goBILDA part 1500-0010-0032.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 3.49,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1500_0010_0032.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1500-0010-0032.zip",
+  "specs": {
+    "weight_g": 0.15,
+    "material": "Plastic",
+    "dims_mm": [
+      34.0,
+      32.0,
+      1.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        34.0,
+        32.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

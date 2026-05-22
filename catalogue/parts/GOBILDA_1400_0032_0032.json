@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1400_0032_0032",
+  "name": "1400 Series 1-Side, 2-Post Clamping Mount (32mm Bore)",
+  "category": "bracket",
+  "description": "1400 Series 1-Side, 2-Post Clamping Mount (32mm Bore). Aluminum. goBILDA part 1400-0032-0032.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 8.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1400_0032_0032.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1400-0032-0032.zip",
+  "specs": {
+    "weight_g": 14.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      32.0,
+      32.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        32.0,
+        32.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

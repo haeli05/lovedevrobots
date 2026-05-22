@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1116_0040_0136",
+  "name": "1116 Series Grid Plate (5 x 17 Hole, 40 x 136mm)",
+  "category": "bracket",
+  "description": "1116 Series Grid Plate (5 x 17 Hole, 40 x 136mm). Aluminum. goBILDA part 1116-0040-0136.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 3.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1116_0040_0136.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1116-0040-0136.zip",
+  "specs": {
+    "weight_g": 30.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      136.0,
+      136.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        136.0,
+        136.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

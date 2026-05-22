@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_2902_0005_0038",
+  "name": "2902 Series Hinge (5 Hole, 38mm Length)",
+  "category": "bracket",
+  "description": "2902 Series Hinge (5 Hole, 38mm Length). Aluminum. goBILDA part 2902-0005-0038.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 7.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_2902_0005_0038.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/2902-0005-0038.zip",
+  "specs": {
+    "weight_g": 9.2,
+    "material": "Aluminum",
+    "dims_mm": [
+      38.0,
+      38.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        38.0,
+        38.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

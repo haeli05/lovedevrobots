@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1611_0514_0006",
+  "name": "1611 Series Flanged Ball Bearing (6mm ID x 14mm OD, 5mm Thickness) - 2 Pack",
+  "category": "bracket",
+  "description": "1611 Series Flanged Ball Bearing (6mm ID x 14mm OD, 5mm Thickness) - 2 Pack. . goBILDA part 1611-0514-0006.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 3.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1611_0514_0006.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1611-0514-0006.zip",
+  "specs": {
+    "weight_g": 3.0,
+    "material": "",
+    "dims_mm": [
+      14.0,
+      6.0,
+      5.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        14.0,
+        6.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

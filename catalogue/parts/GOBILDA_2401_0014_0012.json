@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_2401_0014_0012",
+  "name": "2401 Series 24mm Pitch Track Sprocket (12 Tooth) - 2 Pack",
+  "category": "bracket",
+  "description": "2401 Series 24mm Pitch Track Sprocket (12 Tooth) - 2 Pack. . goBILDA part 2401-0014-0012.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 9.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_2401_0014_0012.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/2401-0014-0012.zip",
+  "specs": {
+    "weight_g": 48.0,
+    "material": "",
+    "dims_mm": [
+      24.0,
+      24.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        24.0,
+        24.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

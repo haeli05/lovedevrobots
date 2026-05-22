@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1116_0056_0088",
+  "name": "1116 Series Grid Plate (7 x 11 Hole, 56 x 88mm)",
+  "category": "bracket",
+  "description": "1116 Series Grid Plate (7 x 11 Hole, 56 x 88mm). Aluminum. goBILDA part 1116-0056-0088.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 3.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1116_0056_0088.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1116-0056-0088.zip",
+  "specs": {
+    "weight_g": 27.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      88.0,
+      88.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        88.0,
+        88.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

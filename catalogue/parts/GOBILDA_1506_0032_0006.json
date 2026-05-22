@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1506_0032_0006",
+  "name": "1506 Series 32mm ID Spacer (36mm OD, 6mm Length) - 2 Pack",
+  "category": "bracket",
+  "description": "1506 Series 32mm ID Spacer (36mm OD, 6mm Length) - 2 Pack. Aluminum. goBILDA part 1506-0032-0006.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 3.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1506_0032_0006.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1506-0032-0006.zip",
+  "specs": {
+    "weight_g": 3.4,
+    "material": "Aluminum",
+    "dims_mm": [
+      36.0,
+      32.0,
+      6.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        36.0,
+        32.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

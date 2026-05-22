@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_2806_0005_0004",
+  "name": "2806 Series Black Oxide Steel Cup-Point Set-Screw (M5 x 0.8mm, 4mm Length) - 25 Pack",
+  "category": "bracket",
+  "description": "2806 Series Black Oxide Steel Cup-Point Set-Screw (M5 x 0.8mm, 4mm Length) - 25 Pack. Steel. goBILDA part 2806-0005-0004.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 4.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_2806_0005_0004.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/2806-0005-0004.zip",
+  "specs": {
+    "weight_g": 0.36,
+    "material": "Steel",
+    "dims_mm": [
+      48.0,
+      24.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        48.0,
+        24.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

@@ -1,11 +1,15 @@
 'use client';
 
-import { Download, FileText, Package, Zap, Weight, DollarSign, Activity, Bot, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+import { track } from '@vercel/analytics';
+import { Download, FileText, Package, Zap, Weight, DollarSign, Activity, Bot, ExternalLink, ShoppingCart, GitCompare } from 'lucide-react';
 import { getCataloguePart } from '@/lib/catalogue';
 import { getAssemblyStats } from '@/lib/assembly';
 import type { Assembly } from '@/lib/types';
 import type { MenagerieRobot } from '@/lib/menagerie';
 import { CATEGORY_LABELS } from '@/lib/menagerie';
+import { getRobotSuppliers } from '@/lib/suppliers';
+import { SuppliersModal } from './SuppliersModal';
 
 interface AssemblyPanelProps {
   assembly: Assembly | null;
@@ -214,7 +218,13 @@ export function AssemblyPanel({ assembly, isFinalized, menagerieRobot }: Assembl
 }
 
 function MenagerieInfoPanel({ robot }: { robot: MenagerieRobot }) {
+  const [showSuppliers, setShowSuppliers] = useState(false);
   const menagerieUrl = `https://github.com/google-deepmind/mujoco_menagerie/tree/main/${robot.id}`;
+
+  const supplierEntries = getRobotSuppliers(robot.id);
+  const hasSuppliers = supplierEntries.length > 0;
+
+
 
   const specs: { label: string; value: string }[] = [
     { label: 'Maker',    value: robot.maker },
@@ -236,41 +246,72 @@ function MenagerieInfoPanel({ robot }: { robot: MenagerieRobot }) {
         </div>
       </div>
 
-      {/* Specs grid */}
-      <div className="border-b border-neutral-800 p-3">
-        <div className="grid grid-cols-2 gap-2">
-          {specs.map(({ label, value }) => (
-            <div key={label} className="flex flex-col rounded-lg bg-neutral-900 px-2.5 py-2">
-              <span className="text-[10px] text-neutral-500">{label}</span>
-              <span className="text-sm font-semibold text-neutral-100">{value}</span>
-            </div>
-          ))}
+      {/* Scrollable middle */}
+      <div className="flex-1 overflow-y-auto">
+        {/* Specs grid */}
+        <div className="border-b border-neutral-800 p-3">
+          <div className="grid grid-cols-2 gap-2">
+            {specs.map(({ label, value }) => (
+              <div key={label} className="flex flex-col rounded-lg bg-neutral-900 px-2.5 py-2">
+                <span className="text-[10px] text-neutral-500">{label}</span>
+                <span className="text-sm font-semibold text-neutral-100">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Description */}
+        <div className="p-3 border-b border-neutral-800">
+          <p className="text-xs leading-relaxed text-neutral-400">{robot.description}</p>
+        </div>
+
+        {/* Source link */}
+        <div className="p-3">
+          <a
+            href={menagerieUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-900 px-3 py-2 text-xs text-neutral-400 hover:border-neutral-700 hover:text-neutral-200 transition-colors"
+          >
+            <ExternalLink className="h-3.5 w-3.5 shrink-0" />
+            <span className="flex-1">View in MuJoCo Menagerie</span>
+          </a>
+        </div>
+
+        <div className="mx-3 mb-3 rounded-lg border border-neutral-800 bg-neutral-900/50 px-3 py-2.5">
+          <p className="text-[10px] leading-relaxed text-neutral-500">
+            Live physics via MuJoCo WASM. Assets from Google DeepMind&apos;s open-source menagerie.
+          </p>
         </div>
       </div>
 
-      {/* Description */}
-      <div className="p-3 border-b border-neutral-800">
-        <p className="text-xs leading-relaxed text-neutral-400">{robot.description}</p>
-      </div>
-
-      {/* Source link */}
-      <div className="p-3">
-        <a
-          href={menagerieUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-900 px-3 py-2 text-xs text-neutral-400 hover:border-neutral-700 hover:text-neutral-200 transition-colors"
+      {/* Action buttons — pinned to bottom */}
+      <div className="border-t border-neutral-800 p-3 space-y-2">
+        <button
+          onClick={() => track('buy_now_click', { robotId: robot.id, robotName: robot.name })}
+          className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-orange-400 active:bg-orange-600 transition-colors"
         >
-          <ExternalLink className="h-3.5 w-3.5 shrink-0" />
-          <span className="flex-1">View in MuJoCo Menagerie</span>
-        </a>
+          <ShoppingCart className="h-4 w-4" />
+          Buy This Robot
+        </button>
+        {hasSuppliers && (
+          <button
+            onClick={() => { track('compare_suppliers_click', { robotId: robot.id, robotName: robot.name }); setShowSuppliers(true); }}
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-neutral-200 hover:border-neutral-600 hover:bg-neutral-800 transition-colors"
+          >
+            <GitCompare className="h-4 w-4" />
+            Compare Suppliers
+          </button>
+        )}
       </div>
 
-      <div className="mx-3 rounded-lg border border-neutral-800 bg-neutral-900/50 px-3 py-2.5">
-        <p className="text-[10px] leading-relaxed text-neutral-500">
-          Live physics via MuJoCo WASM. Assets from Google DeepMind&apos;s open-source menagerie.
-        </p>
-      </div>
+      {showSuppliers && (
+        <SuppliersModal
+          robotId={robot.id}
+          robotName={robot.name}
+          onClose={() => setShowSuppliers(false)}
+        />
+      )}
     </div>
   );
 }

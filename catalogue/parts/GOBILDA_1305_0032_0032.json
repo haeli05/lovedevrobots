@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_1305_0032_0032",
+  "name": "1305 Series Thru-Hole Clamping Hub (32mm Bore)",
+  "category": "bracket",
+  "description": "1305 Series Thru-Hole Clamping Hub (32mm Bore). Aluminum. goBILDA part 1305-0032-0032.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 6.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_1305_0032_0032.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/1305-0032-0032.zip",
+  "specs": {
+    "weight_g": 17.0,
+    "material": "Aluminum",
+    "dims_mm": [
+      32.0,
+      32.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        32.0,
+        32.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "sku": "GOBILDA_3616_0014_0144",
+  "name": "Wasteland Wheel (144mm Diameter, 52mm Width)",
+  "category": "bracket",
+  "description": "Wasteland Wheel (144mm Diameter, 52mm Width). Plastic Core with Silicone Tread. goBILDA part 3616-0014-0144.",
+  "tags": [
+    "gobilda",
+    "bracket",
+    "ftc"
+  ],
+  "supplier": "goBILDA",
+  "price_usd": 24.99,
+  "lead_time_days": 5,
+  "mesh_url": "stl/gobilda_3616_0014_0144.stl",
+  "cad_url": "https://www.gobilda.com/content/step_files/3616-0014-0144.zip",
+  "specs": {
+    "weight_g": 348.0,
+    "material": "Plastic Core with Silicone Tread",
+    "dims_mm": [
+      48.0,
+      24.0,
+      10.0
+    ]
+  },
+  "mount_points": [
+    {
+      "id": "mount_a",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    },
+    {
+      "id": "mount_b",
+      "position": [
+        48.0,
+        24.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "connector": "gobilda_m4_8mm",
+      "is_joint": false
+    }
+  ]
+}

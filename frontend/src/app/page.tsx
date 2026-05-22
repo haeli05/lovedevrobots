@@ -8,7 +8,7 @@ import { AssemblyPanel } from '@/components/AssemblyPanel';
 import { RobotViewer } from '@/components/RobotViewer';
 import { MenageriePicker } from '@/components/MenageriePicker';
 import type { Assembly } from '@/lib/types';
-import type { MenagerieRobot } from '@/lib/menagerie';
+import { type MenagerieRobot, ROBOTS } from '@/lib/menagerie';
 
 type LeftTab = 'chat' | 'library';
 
@@ -16,7 +16,9 @@ export default function Home() {
   const [assembly, setAssembly] = useState<Assembly | null>(null);
   const [isFinalized, setIsFinalized] = useState(false);
   const [leftTab, setLeftTab] = useState<LeftTab>('library');
-  const [menagerieRobot, setMenagerieRobot] = useState<MenagerieRobot | null>(null);
+  const [menagerieRobot, setMenagerieRobot] = useState<MenagerieRobot | null>(
+    () => ROBOTS.find(r => r.category === 'arm') ?? null
+  );
 
   const handleAssemblyUpdate = useCallback((a: Assembly) => {
     setAssembly(a);
